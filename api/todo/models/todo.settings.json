@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "todos",
+  "info": {
+    "name": "todo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "todos"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "todo",
+        "done",
+        "blocked",
+        "postponed",
+        "canceled",
+        "deleted"
+      ],
+      "default": "todo"
+    }
+  }
+}
