@@ -39,6 +39,14 @@
         "deleted"
       ],
       "default": "todo"
+    },
+    "postponed_from": {
+      "model": "todo",
+      "via": "postponed_to"
+    },
+    "postponed_to": {
+      "model": "todo",
+      "via": "postponed_from"
     }
   }
 }
